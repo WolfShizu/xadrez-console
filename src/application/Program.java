@@ -2,7 +2,6 @@ package application;
 
 import java.util.Scanner;
 
-import game.Board;
 import game.GameState;
 import util.Functions;
 
@@ -12,11 +11,11 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		Functions fun = new Functions();
-		GameState game = new GameState();
-		Board board = new Board();
+		GameState gameState = new GameState();
 		
-		fun.setGameState(game);
-		board.createPieces();
+		fun.setBoard(gameState);
+		
+		gameState.createPieces();
 		
 		
 		}
