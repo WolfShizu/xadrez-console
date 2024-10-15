@@ -13,9 +13,11 @@ public class Program {
 		Functions fun = new Functions();
 		GameState gameState = new GameState();
 		
-		fun.setBoard(gameState);
+		fun.setGameState(gameState);
+		gameState.setFuncions(fun);
 		
-		gameState.createPieces();
+		gameState.createBoard();
+		gameState.showRealBoard();
 		
 		
 		}

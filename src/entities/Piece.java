@@ -1,11 +1,19 @@
 package entities;
 
-abstract class Piece {
+public abstract class Piece {
 
 	protected String color;
 	protected int positionX;
 	protected int positionY;
+	protected String name;
 	
+//	public void setInitialPosition (int x, int y) {
+//		
+//		this.positionX = x;
+//		this.positionY = y;
+//		
+//	}
+
 	public String getColor() {
 		return this.color;
 		
@@ -15,10 +23,12 @@ abstract class Piece {
 		return this.positionX;
 	}
 	
-	public void setInitialPosition (int x, int y) {
-		
-		this.positionX = x;
-		this.positionY = y;
-		
+	public int getPositionY() {
+		return this.positionY;
 	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
 }

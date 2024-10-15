@@ -4,55 +4,52 @@ import game.GameState;
 
 public class Functions {
 	
-	GameState gameState = new GameState();
+	GameState gameState;
 	
 	private String[] letters = {"a","b","c","d","e","f","g","h"};
 	
-	public void setBoard(GameState board) {
-		this.gameState = board;
+	public void setGameState(GameState gameState) {
+		this.gameState = gameState;
 	}
 	
-	private String[][] createBaseBoard() {	
-		String[][] baseBoard = new String[10][10];
+	public String[][] createRealBoard() {	
+		String[][] realBoard = new String[10][10];
 
 		// Cria os espaços em cadda célula
 		for(int i = 0; i < 10; i++) {
 			for(int j = 0; j < 10; j++) {
-				baseBoard[i][j] = "   ";
-			}
-		}
-		
-		// Cria os espaços do tabuleiro em cada célula do tabuleiro
-		for(int i = 2; i < 10; i++) {
-			for(int j = 2; j < 10; j++) {
-				baseBoard[i][j] = "[ ]";
+				realBoard[i][j] = "   ";
 			}
 		}
 		
 		// Cria o guia de coordenadas
 		for(int i = 2; i < 10; i++) {
-			baseBoard[0][i] = "[" + this.letters[i-2] + "]"; 
-			baseBoard[i][0] = "[" + String.valueOf(i-1) + "]";
+			realBoard[0][i] = "[" + this.letters[i-2] + "]"; 
+			realBoard[i][0] = "[" + String.valueOf(i-1) + "]";
 		}
-		return baseBoard;
+		return realBoard;
 	}
 	
-	private void updateBoard(String[][] realBoard2) {
+	public String[][] createGameBoard(){
+		String gameBoard[][] = new String[8][8];
+		for (int i = 0; i <8; i++) {
+			for (int j = 0; j<8; j++) {
+				gameBoard[i][j] = "[ ]";
+			}
+		}
+		return gameBoard;
+		
+	}
+	
+	public void updateBoard(String[][] gameBoard) {
 		String[][] realBoard = gameState.getRealBoard();
 		
 		for (int i = 2; i < 10; i++) {
 			for (int j = 2; j < 10; j++) {
-				
-				realBoard[i][j] = realBoard2[i-2][j-2];
-				
+				realBoard[i][j] = gameBoard[i-2][j-2];
 			}
-			
 		}
-		
-		gameState.setBoard(realBoard);
-		
+		gameState.setRealBoard(realBoard);
 	}
-	
-	
 		
 }
