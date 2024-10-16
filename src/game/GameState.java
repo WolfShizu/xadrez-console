@@ -3,8 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Pawn;
-import entities.Piece;
+import entities.*;
 import util.Functions;
 
 public class GameState {
@@ -34,7 +33,29 @@ public class GameState {
 			pieceList.add(new Pawn(1, j, "black", "[p]"));
 			pieceList.add(new Pawn(6, j, "white", "[P]"));
 		}
+		
+		pieceList.add(new Rook(0, 0, "black", "[r]"));
+		pieceList.add(new Rook(0, 7, "black", "[r]"));
+		pieceList.add(new Rook(7, 0, "white", "[R]"));
+		pieceList.add(new Rook(7, 7, "white", "[R]"));
+		
+		pieceList.add(new Knight(0, 1, "black", "[h]"));
+		pieceList.add(new Knight(0, 6, "black", "[h]"));
+		pieceList.add(new Knight(7, 1, "white", "[H]"));
+		pieceList.add(new Knight(7, 6, "white", "[H]"));
+		
+		pieceList.add(new Bishop(0, 2, "black", "[b]"));
+		pieceList.add(new Bishop(0, 5, "black", "[b]"));
+		pieceList.add(new Bishop(7, 2, "white", "[B]"));
+		pieceList.add(new Bishop(7, 5, "white", "[B]"));
+		
+		pieceList.add(new Queen(0, 3, "black", "[q]"));
+		pieceList.add(new Queen(7, 3, "white", "[Q]"));
+		pieceList.add(new King(0, 4, "black", "[k]"));
+		pieceList.add(new King(7, 4, "white", "[K]"));
+		
 	}
+	
 	
 	
 	public void placePieces() {

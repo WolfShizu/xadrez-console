@@ -25,7 +25,7 @@ public class Functions {
 		// Cria o guia de coordenadas
 		for(int i = 2; i < 10; i++) {
 			realBoard[0][i] = "[" + this.letters[i-2] + "]"; 
-			realBoard[i][0] = "[" + String.valueOf(i-1) + "]";
+			realBoard[i][0] = "[" + String.valueOf(10-i) + "]";
 		}
 		return realBoard;
 	}
