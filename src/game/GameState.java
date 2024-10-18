@@ -27,6 +27,19 @@ public class GameState {
 		this.realBoard = realBoard;
 	}
 	
+	public Piece getPiece(int targetX, int targetY) {
+		
+		for (Piece piece : pieceList) {	
+			int sourceX = piece.getPositionX();
+			int sourceY = piece.getPositionY();
+			
+			if (sourceX == targetX && sourceY == targetY) {
+				return piece;
+			}
+		}
+		return null;
+	}
+	
 	public void createPieces() {
 		
 		for (int j = 0; j < 8; j++) {
@@ -90,7 +103,6 @@ public class GameState {
 				System.out.print(this.realBoard[i][j]);
 			}
 		}
-		
 	}
 	
 }

@@ -2,13 +2,13 @@ package entities;
 
 public abstract class Piece {
 
-	protected String color;
-	// Linha
-	protected int positionX;
-	// Coluna
-	protected int positionY;
-	protected String name;
+	protected boolean[][] validPosition;
 
+	protected String color;
+	protected Integer positionX; // Linha
+	protected Integer positionY; // Coluna
+	protected String name;
+	
 	public Piece (int positionX, int positionY, String color, String name) {
 		
 		this.positionX = positionX;
@@ -33,6 +33,11 @@ public abstract class Piece {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public void die() {
+		this.positionX = null;
+		this.positionY = null;
 	}
 	
 }
