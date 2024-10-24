@@ -10,13 +10,14 @@ public class Pawn extends Piece {
 
 	}
 
-	public boolean pawnMove(int targetX, int targetY, boolean piece) {
+	public boolean move(int targetX, int targetY, boolean piece) {
 		
 		// movimentação básica
 		if(targetY == this.positionY) {
 			if (targetX == (this.positionX + 1) || (targetX == (this.positionX + 2) && moves == 0)) {
 				this.positionX = targetX;
 				this.positionY = targetY;
+				moves ++;
 				return true;
 			}
 		}
@@ -26,6 +27,7 @@ public class Pawn extends Piece {
 			targetX == (this.positionX + 1) && piece == true) {
 			this.positionX = targetX;
 			this.positionY = targetY;
+			moves ++;
 			return true;
 		}
 		return false;

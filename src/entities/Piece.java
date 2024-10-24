@@ -40,4 +40,8 @@ public abstract class Piece {
 		this.positionY = null;
 	}
 	
+	public boolean move() {
+		return false;
+	}
+	
 }
